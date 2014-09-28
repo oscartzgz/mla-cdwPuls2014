@@ -1,10 +1,75 @@
+/*
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?u3l8qv');
+	src:url('../fonts/icomoon.eot?#iefixu3l8qv') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?u3l8qv') format('woff'),
+		url('../fonts/icomoon.ttf?u3l8qv') format('truetype'),
+		url('../fonts/icomoon.svg?u3l8qv#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pen:before {
+	content: "\e600";
+	margin-right: .7em;
+}
+.icon-star:before {
+	content: "\e601";
+	color: #FFBE2C;
+	margin-right: 0.4em;
+	position: relative;
+	top: .1em;
+}
+.icon-like:before {
+	content: "\e602";
+	color: #22B524;
+}
+.icon-unlike:before {
+	content: "\e603";
+	color: #DD4F24;
+}
+
+
+
+
+
+
 a{
 	color: #22BCE0;
 }
 
 body{
 	background: #EEEEEE;
-	font-family: Arial;
+	font-family: "Open Sans", Arial;
 	font-size: 16px;
 }
 
@@ -67,16 +132,29 @@ header #avatar img{
 	display: inline-block;
 }
 
+header #logo{
+	/*-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);*/
+	border-right: 1px solid white;
+	margin-right: .5em;
+}
+
 header #logo img{
 	width: 52px;
-	border-right: 1px solid white;
 	padding-right: .5em;
 	margin-right: .5em;
+	-webkit-transition: .5s;
+}
+
+header #logo img:hover{
+	-webkit-transform: rotate(360deg);
 }
 
 nav{
 	background: #80BCA3;
-	padding: 0 .5em;
+	padding: 0 7em 0 .5em;
 	position: relative;
 }
 
@@ -96,10 +174,21 @@ nav ul #publicar_nav a{
 	background: #22BCE0;
 	border-radius: .4em;
 	box-shadow: rgba(0,0,0,0.5) 5px 5px 15px;
-	padding: .7em 1em;
+	padding: .7em .5em .7em 2.5em;
 	font-style: italic;
 	text-decoration: none;
 	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+}
+
+nav ul #publicar_nav a:before{
+	position: absolute;
+	left: .3em;
+	top: .6em;
+}
+
+nav ul #publicar_nav a:hover:before{
+	font-size: 1.5em;
+	top: .3em;	
 }
 
 nav ul li{
@@ -110,9 +199,16 @@ nav ul li{
 nav ul li a{
 	color: white;
 	display: block;
-	padding: 0.5em 0;
+	padding: 0.5em .5em;
+	-webkit-transition: .3s;
+}
+nav ul li a:hover{
+	background: #343B54;
 }
 
+aside{
+	display: none;
+}
 
 #contenido{
 	margin: 1em;
@@ -181,7 +277,71 @@ nav ul li a{
 	width: 90%;
 }
 
+
+#contenido .item .votacion a
+{
+		text-decoration: none;
+}
 #contenido .item .votacion .comentarios_item,
 #contenido .item .votacion .guardar_item{
 	float: right;
+}
+
+
+
+@media screen and (min-width: 800px){
+	#contenido{
+		overflow: hidden;
+	}
+	#contenido .item{
+		width: 49%;
+		/*display: inline-block;*/
+		float: left;
+	}
+	#contenido .item:nth-child(odd){
+		margin-right: 2%;
+
+	}
+}
+
+
+@media screen and (min-width: 1000px){
+	aside{
+		display: block;
+		float: right;
+		margin: 1em 1em;
+		width: 20%;
+	}
+	aside video{
+		width: 100%
+	}
+}
+
+
+
+
+
+/**
+FORMULARIO
+**/
+
+.formulario{
+	padding: 1em;
+	text-align: right;
+	display: none;
+}
+
+.formulario input{
+	border: 1px solid #CCC;
+	border-radius: .3em;
+	padding: .2em .6em;
+}
+
+.formulario input[type="submit"]{
+	background: #22BCE0;
+	border-color: #22BCE0;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
+	font-style: italic;
+	text-shadow: rgba(0, 0, 0, 0.5) 2px 2px 5px;
+	color: white;
 }
