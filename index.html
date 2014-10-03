@@ -18,7 +18,7 @@
 				Puls2014: Comunidad de personas emprendedoras y que fomran internet.
 			</h1>
 			<figure id="avatar">
-				<img src="images/avatar.jpg">
+				<!-- <img src="images/avatar.jpg"> -->
 			</figure>
 		</header>		
 		<nav>
@@ -39,8 +39,12 @@
 		</form>
 
 		<aside>
+			<div id="geo">
+			<p id="clima"></p>
+				
+			</div>
 			<video width="320" height="240" autoplay controls>
-				<source src="videos/lecturas.mp4" type="video/mp4">
+				<source src="videos/lecturas.m4v" type="video/mp4">
 				<source src="videos/lecturas.ogg" type="video/ogg">
 			</video>
 		</aside>
@@ -211,5 +215,16 @@
 		</footer>
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/formulario.js"></script>
+		<script src="js/geo.js"></script>
+		<script src="js/ajax.js"></script>
+		<script >
+			window.onload = function() {
+				console.log("Ya se disparo el evento onLoad");
+			}
+
+			$(function(){
+				console.log('Ya se disparo el evento DOMContentLoaded');
+			});
+		</script>
 	</body>
 </html>
